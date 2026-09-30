@@ -402,7 +402,7 @@ products.forEach((x,i)=>{
 function update(){
   let tq=0,tr=0,o=0;
   products.forEach((x,i)=>{tq+=q[i];tr+=x.points*q[i];o+=x.p*q[i]});
-  const d=promo?Math.round(o*.01):0;
+  const d=promo?Math.round(o*.03):0;//discount
   document.getElementById('qtyTotal').textContent=tq;
   document.getElementById('robuxTotal').textContent=tr.toLocaleString('zh-TW')+' 點';
   document.getElementById('original').textContent=money(o);
