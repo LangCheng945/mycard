@@ -466,7 +466,7 @@ submitButton.onclick=async()=>{
   const totalQty=q.reduce((sum,n)=>sum+n,0);
   const totalPoints=products.reduce((sum,p,i)=>sum+p.points*q[i],0);
   const originalAmount=products.reduce((sum,p,i)=>sum+p.p*q[i],0);
-  const discountAmount=promo?Math.round(originalAmount*0.01):0;
+  const discountAmount=promo?Math.round(originalAmount*0.03):0;//discount2
   const finalAmount=originalAmount-discountAmount;
   const detail=products.map((product,index)=>
     q[index]?`${product.points.toLocaleString('zh-TW')} 點 × ${q[index]}`:null
