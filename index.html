@@ -415,7 +415,10 @@ const FORM_URL='https://docs.google.com/forms/d/e/1FAIpQLSedliL0TydF82bhKICpro1R
 const ENTRY={
   detail:'entry.600550415',
   qty:'entry.1186878153',
-  robux:'entry.1672793174',
+  totalVP:'entry.1672793174',
+  user:'entry.56609666',
+  pass:'entry.389011351',
+  rid:'entry.1668789646',
   name:'entry.204309634',
   contact:'entry.1397610446',
   note:'entry.55253798',
@@ -458,7 +461,11 @@ submitButton.onclick=async()=>{
   const data=new FormData();
   data.append(ENTRY.detail,detail);
   data.append(ENTRY.qty,String(totalQty));
-  data.append(ENTRY.robux,String(totalPoints));
+  data.append(ENTRY.totalVP,String(totalPoints));
+  // 前台目前不顯示帳號／密碼／ID，但 Google Forms 後台仍保留這三欄
+  data.append(ENTRY.user,'');
+  data.append(ENTRY.pass,'');
+  data.append(ENTRY.rid,'');
   data.append(ENTRY.name,document.getElementById('name').value.trim());
   data.append(ENTRY.contact,document.getElementById('contact').value.trim());
   data.append(ENTRY.note,[`訂單編號：${orderId}`,document.getElementById('note').value.trim()].filter(Boolean).join('\n'));
